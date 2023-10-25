@@ -1,11 +1,11 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.9
 
 import PackageDescription
 
 let package = Package(
     name: "SkeletonUI",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v16),
         .tvOS(.v13),
         .watchOS(.v6),
         .macOS(.v10_15)
@@ -17,7 +17,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.11.1")
+       
     ],
     targets: [
         .target(
@@ -25,7 +25,7 @@ let package = Package(
         ),
         .testTarget(
             name: "SkeletonUISnapshotTests",
-            dependencies: ["SkeletonUI", "SnapshotTesting"]
+            dependencies: ["SkeletonUI"]
         ),
         .testTarget(
             name: "SkeletonUIUnitTests",

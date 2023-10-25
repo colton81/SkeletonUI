@@ -10,13 +10,13 @@ public struct SkeletonModifier: ViewModifier {
 
     public func body(content: Content) -> some View {
         content
-            .modifier(SkeletonAnimatableModifier(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance).animation(animation.type))
+            .modifier(SkeletonAnimatableModifier(CGFloat(integerLiteral: Int(truncating: animate as NSNumber)), appearance))
+            .animation(animation.type,value: animate)
             .clipShape(SkeletonShape(shape))
             .onAppear { animate.toggle() }
     }
 }
-<<<<<<< Updated upstream
-=======
+
 
 // MARK: - User
 
@@ -202,6 +202,7 @@ struct PopListCard: View {
                         phone: "346-242-2610",
                         email: "coltonhillebrand92@gmail.com"
                     )
+                
                     PopListCard(
                         loadingState: .loading,
                        
@@ -240,4 +241,4 @@ struct PopListCard: View {
         }
     }
 }
->>>>>>> Stashed changes
+
